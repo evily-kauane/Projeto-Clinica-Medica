@@ -1,4 +1,3 @@
-
 package dao;
 import db.Db;
 import  entities.Usuario;
@@ -17,8 +16,7 @@ public class UsuarioDao {
             conn = Db.getConnection();
 
             ps = conn.prepareStatement(
-                    "INSERT INTO Usuario" + "(Nome, Telefone," +
-                            " CPF, Email, Cargo, Setor ,Nivel_Acesso)"
+                    "INSERT INTO Usuario" + "(Nome, Telefone, CPF, Email, Cargo, Setor ,Nivel_Acesso)"
                             + "VALUES (? ,? ,? ,? ,? ,?, ?) " ,
                     Statement.RETURN_GENERATED_KEYS);
 
@@ -100,8 +98,7 @@ public class UsuarioDao {
 
             conn = Db.getConnection();
             ps = conn.prepareStatement(
-                    "UPDATE Usuario " +"SET Nome =?"+ "Telefone=?," + " CPF=?," + "Email=?,"+ "Cargo=?,"
-                            +"Setor=?," + "Nivel_Acesso=?," + "WHERE ID_Usuario =?");
+                    "UPDATE Usuario " + "SET Nome = ?, Telefone = ?, CPF = ?, Email = ?, Cargo = ?, Setor = ?, Nivel_Acesso = ?" + "WHERE ID_Usuario = ?");
 
             ps.setString(1, obj.getNome());
             ps.setString(2,obj.getTelefone());

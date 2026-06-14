@@ -1,6 +1,5 @@
 package dao;
 
-
 import db.Db;
 import entities.Paciente;
 
@@ -21,20 +20,19 @@ public class PacienteDao {
             conn = Db.getConnection();
 
         ps = conn.prepareStatement("INSERT INTO Paciente "
-                +"(Nome, CPF, RG, Telefone, Endereco, Email, Data_Nascimento, Contato_Emergencia, ID_Endereco, ID_Plano) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                +"(Nome, CPF, RG, Telefone, Email, Data_Nascimento, Contato_Emergencia, ID_Endereco, ID_Plano) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 Statement.RETURN_GENERATED_KEYS);
 
         ps.setString(1, obj.getNome());
         ps.setString(2, obj.getCpf());
         ps.setString(3, obj.getRg());
         ps.setString(4, obj.getTelefone());
-        ps.setString(5, obj.getEndereco());
-        ps.setString(6, obj.getEmail());
-        ps.setString(7, obj.getDataNascimento());
-        ps.setString(8, obj.getContatoEmergencia());
-        ps.setInt(9, obj.getIdEndereco());
-        ps.setInt(10, obj.getIdPlano());
+        ps.setString(5, obj.getEmail());
+        ps.setString(6, obj.getDataNascimento());
+        ps.setString(7, obj.getContatoEmergencia());
+        ps.setInt(8, obj.getIdEndereco());
+        ps.setInt(9, obj.getIdPlano());
 
         int rowsAffected = ps.executeUpdate();
 
@@ -86,7 +84,6 @@ public class PacienteDao {
                paciente.setCpf(rs.getString("CPF"));
                paciente.setRg(rs.getString("RG"));
                paciente.setTelefone(rs.getString("Telefone"));
-               paciente.setEndereco(rs.getString("Endereco"));
                paciente.setEmail(rs.getString("Email"));
                paciente.setDataNascimento(rs.getString("Data_Nascimento"));
                paciente.setContatoEmergencia(rs.getString("Contato_Emergencia"));
@@ -129,7 +126,6 @@ public class PacienteDao {
                             + "CPF = ?, "
                                     + "RG = ?, "
                                     + "Telefone = ?, "
-                                    + "Endereco = ?, "
                                     + "Email = ?, "
                                     + "Data_Nascimento = ?, "
                                     + "Contato_Emergencia = ?, "
@@ -143,13 +139,12 @@ public class PacienteDao {
                             ps.setString(2, obj.getCpf());
                              ps.setString(3, obj.getRg());
                              ps.setString(4, obj.getTelefone());
-                             ps.setString(5, obj.getEndereco());
-                             ps.setString(6, obj.getEmail());
-                             ps.setString(7, obj.getDataNascimento());
-                            ps.setString(8, obj.getContatoEmergencia());
-                            ps.setInt(9, obj.getIdEndereco());
-                            ps.setInt(10, obj.getIdPlano());
-                            ps.setInt(1, obj.getIdPaciente());
+                             ps.setString(5, obj.getEmail());
+                             ps.setString(6, obj.getDataNascimento());
+                            ps.setString(7, obj.getContatoEmergencia());
+                            ps.setInt(8, obj.getIdEndereco());
+                            ps.setInt(9, obj.getIdPlano());
+                            ps.setInt(10, obj.getIdPaciente());
 
 
                             ps.executeUpdate();

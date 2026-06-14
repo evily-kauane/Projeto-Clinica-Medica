@@ -9,7 +9,6 @@ public class Paciente {
     private String cpf;
     private String rg;
     private String telefone;
-    private String endereco;
     private String email;
     private String dataNascimento;
     private String contatoEmergencia;
@@ -26,7 +25,6 @@ public class Paciente {
                     String cpf,
                     String rg,
                     String telefone,
-                    String endereco,
                     String email,
                     String dataNascimento,
                     String contatoEmergencia,
@@ -37,7 +35,6 @@ public class Paciente {
         this.cpf = cpf;
         this.rg = rg;
         this.telefone = telefone;
-        this.endereco = endereco;
         this.email = email;
         this.dataNascimento = dataNascimento;
         this.contatoEmergencia = contatoEmergencia;
@@ -84,14 +81,6 @@ public class Paciente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     public String getEmail() {

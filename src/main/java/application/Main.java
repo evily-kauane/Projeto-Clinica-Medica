@@ -1,16 +1,63 @@
 package application;
 
 import dao.ConsultaDao;
+import dao.ExameDao;
+import dao.PacienteDao;
+import dao.UsuarioDao;
 import entities.Consulta;
+import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.scene.layout.VBox;
+import java.text.SimpleDateFormat;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
-import java.time.LocalDateTime;
+public class Main extends Application {
+    //convertendo as datas
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-public class Main {
-    public static void main(String[] args) {
-        ConsultaDao dao = new ConsultaDao();
+    //criando objetos pra usar os comando sql que tem na classe dao
+    private ConsultaDao consultaDao = new ConsultaDao();
+    private PacienteDao pacienteDao = new PacienteDao();
+    private UsuarioDao usuarioDao = new UsuarioDao();
+    private ExameDao exameDao = new ExameDao();
 
-        dao.deleteById(13);
+    private TextField txtIdConsulta, txtIdPaciente,txtIdSetor, txtCRM;
+    private TextField txtDataHora, txtValor, txtTipo, txtStatus, txtObservacoes;
+    private TableView<Consulta> tableConsulta;
 
-        System.out.println("Consulta deletada!");
+    //ATRIBUTOS PACIENTE COLOCA PACIENTEID E NAO IDPACIENTE EM BAIXO COLOCA O TABLEVIEW
+
+    //ATRIBUTOS USUARIO EM BAIXO COLOCA O TABLEVIEW
+
+    //ATRIBUTOS EXAME EM BAIXO COLOCA O TABLEVIEW
+
+
+
+    private Label lblStatusGlobal; //serve pra mostrar mensagens pro usuario na tela
+
+    //metodo pra montar as abas
+    private VBox criaPainelConsultas(){
+return new VBox();
     }
+
+    private VBox criarPainelPacientes(){
+return new VBox();
+    }
+
+    private VBox criarPainelUsuario(){
+return new VBox();
+    }
+
+    private VBox criarPainelExames(){
+        return new VBox();
+
+    }
+
+    public void start(Stage primaryStage){
+
+    }
+
+
 }

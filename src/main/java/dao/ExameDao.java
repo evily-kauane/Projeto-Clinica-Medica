@@ -1,4 +1,5 @@
 package dao;
+import db.Db;
 import entities.Exame;
 import java.sql.*;
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class ExameDao {
 
             try {
                 conn =  Db.getConnection();
-                ps = conn.prepareStatement("UPDATE Exame" + "SET  ID_Consulta = ?, Tipo_Exame = ?, Data_Exame = ?, " + "Resultado = ?, Status = ?, Valor = ? " + "WHERE ID_Exame = ?"); // vai atualizar os dados dos exames que possuir determinado id
+                ps = conn.prepareStatement("UPDATE Exame " + "SET  ID_Consulta = ?, Tipo_Exame = ?, Data_Exame = ?, " + "Resultado = ?, Status = ?, Valor = ? " + "WHERE ID_Exame = ?"); // vai atualizar os dados dos exames que possuir determinado id
                 ps.setInt(1, obj.getIdConsulta()); // preenche oa paramentos  e vai substituir os ? por valores
                 ps.setString(2, obj.getTipoExame());
                 ps.setString(3, obj.getDataExame());
